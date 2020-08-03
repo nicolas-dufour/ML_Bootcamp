@@ -1,5 +1,14 @@
 import plotly.graph_objects as go
 
+def plot_regression(x, y, y_hat):
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatter(x=x, y=y, mode='markers')
+    )
+    fig.add_trace(
+        go.Scatter(x=x, y=y_hat, mode='lines+markers')
+    )
+    return fig
 
 def plot_pca(X_reduced, y, y_name):
     trace1 = go.Scatter(
